@@ -10,7 +10,7 @@ class Header extends Component {
     return (
       <>
         <header>
-          <h5 className="logo">SuperFlix</h5>
+          <h4 className="logo">SuperFlix</h4>
           <nav>
             <ul className="nav-links">
               <li>

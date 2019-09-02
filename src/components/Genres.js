@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Slider from "./Slider";
 
 class Genres extends Component {
   constructor(props) {
@@ -31,12 +32,17 @@ class Genres extends Component {
         {this.props.moviesGenreList &&
           this.props.moviesGenreList.map((genre, index) => {
             return (
-              <ul>
-                <h6>{this.state.genreIDs[index].name}</h6>
-                {genre.map(movie => {
-                  return <li>{movie.title}</li>;
-                })}
-              </ul>
+              <>
+                <Slider movieList={genre} />
+
+                {/* <ul>
+                  <h6>{this.state.genreIDs[index].name}</h6>
+
+                  {genre.map((movie, index) => {
+                    return <li key={index}>{movie.title}</li>;
+                  })}
+                </ul> */}
+              </>
             );
           })}
         <ul></ul>
