@@ -41,14 +41,6 @@ class Genres extends Component {
                 <div>
                   <Slider movieList={genre} />
                 </div>
-
-                {/* <ul>
-                  <h6>{this.state.genreIDs[index].name}</h6>
-
-                  {genre.map((movie, index) => {
-                    return <li key={index}>{movie.title}</li>;
-                  })}
-                </ul> */}
               </>
             );
           })}

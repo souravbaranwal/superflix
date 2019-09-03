@@ -10,7 +10,7 @@ class Slider extends Component {
   }
 
   prevSlide = () => {
-    const lastIndex = this.state.movies.length - 1;
+    const lastIndex = this.props.movieList.length - 1;
     const resetIndex = this.state.currentImageIndex === 0;
     const index = resetIndex ? lastIndex : this.state.currentImageIndex - 1;
     this.setState({
@@ -18,7 +18,7 @@ class Slider extends Component {
     });
   };
   nextSlide = () => {
-    const lastIndex = this.state.movies.length - 1;
+    const lastIndex = this.props.movieList.length - 1;
     const resetIndex = this.state.currentImageIndex === lastIndex;
     const index = resetIndex ? 0 : this.state.currentImageIndex + 1;
     this.setState({
@@ -28,10 +28,10 @@ class Slider extends Component {
 
   render() {
     const index = this.state.currentImageIndex;
-    let firstFiveVideo = this.state.movies.slice(index, index + 5);
+    let firstFiveVideo = this.props.movieList.slice(index, index + 5);
     if (firstFiveVideo.length < 5) {
       firstFiveVideo = firstFiveVideo.concat(
-        this.state.movies.slice(0, 5 - firstFiveVideo.length)
+        this.props.movieList.slice(0, 5 - firstFiveVideo.length)
       );
     }
 
@@ -54,7 +54,6 @@ class Slider extends Component {
                     key={index}
                   />
                   <div className="movieDetails">
-                    {console.log(movie, "hi I am movie")}
                     <p className="movie-title">{movie.title}</p>
                   </div>
                 </li>
