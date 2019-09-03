@@ -37,18 +37,18 @@ header {
 // ================================
 // Slider Section
 // ================================
-
+.genre-heading {
+  margin: 35px auto 10px auto;
+  width: 86.5%;
+}
 .sliderParent {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   justify-items: center;
-  // margin: 40px 0;
+  margin: auto;
+  width: 95%;
 
-  img {
-    width: 200px;
-    height: 300px;
-  }
   ul {
     list-style: none;
   }
@@ -64,25 +64,47 @@ header {
     transform: translateX(25%);
   }
 
-  .slider-item {
-    position: relative;
-    vertical-align: middle;
-    display: inline-block;
-    list-style: none;
-
-    transition-duration: 0.3s;
-    overflow: hidden;
-    cursor: pointer;
-    border: none;
-  }
-
   .slider-content {
     display: block;
-    margin-top: 34px;
     list-style: none;
-    // white-space: nowrap;
-    // transform: translateY(-50%) translateX(-100px);
     text-align: center;
+
+    .slider-item {
+      position: relative;
+      vertical-align: middle;
+      display: inline-block;
+      list-style: none;
+      transition-duration: 0.3s;
+      overflow: hidden;
+      cursor: pointer;
+      border: none;
+      .poster {
+        opacity: 1;
+        display: block;
+        width: 250px;
+        height: 150px;
+        transition: 0.5s ease;
+        backface-visibility: hidden;
+      }
+      .movieDetails {
+        transition: 0.5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      &:hover {
+        .poster {
+          opacity: 0.3;
+        }
+        .movieDetails {
+          opacity: 1;
+        }
+      }
+    }
   }
   .arrow-container {
     display: flex;

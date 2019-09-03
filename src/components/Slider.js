@@ -28,10 +28,10 @@ class Slider extends Component {
 
   render() {
     const index = this.state.currentImageIndex;
-    let firstFiveVideo = this.state.movies.slice(index, index + 6);
-    if (firstFiveVideo.length < 6) {
+    let firstFiveVideo = this.state.movies.slice(index, index + 5);
+    if (firstFiveVideo.length < 5) {
       firstFiveVideo = firstFiveVideo.concat(
-        this.state.movies.slice(0, 6 - firstFiveVideo.length)
+        this.state.movies.slice(0, 5 - firstFiveVideo.length)
       );
     }
 
@@ -45,14 +45,18 @@ class Slider extends Component {
           </div>
           <div className="sliderChild">
             <ul className="slider-content">
-              {firstFiveVideo.map((image, index) => (
+              {firstFiveVideo.map((movie, index) => (
                 <li className="slider-item">
                   <img
                     className="poster"
-                    src={`https://image.tmdb.org/t/p/w500${image.poster_path}`}
+                    src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
                     alt=""
                     key={index}
                   />
+                  <div className="movieDetails">
+                    {console.log(movie, "hi I am movie")}
+                    <p className="movie-title">{movie.title}</p>
+                  </div>
                 </li>
               ))}
             </ul>

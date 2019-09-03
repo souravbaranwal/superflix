@@ -34,7 +34,9 @@ class Genres extends Component {
             return (
               <>
                 <div>
-                  <h6>{this.state.genreIDs[index].name}</h6>
+                  <h6 className="genre-heading">
+                    {this.state.genreIDs[index].name}
+                  </h6>
                 </div>
                 <div>
                   <Slider movieList={genre} />
