@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Slider extends Component {
   constructor(props) {
@@ -47,12 +48,23 @@ class Slider extends Component {
             <ul className="slider-content">
               {firstFiveVideo.map((movie, index) => (
                 <li className="slider-item">
-                  <img
-                    className="poster"
-                    src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
-                    alt=""
-                    key={index}
-                  />
+                  {/* passing movie object through Link */}
+                  <Link
+                    to={{
+                      pathname: "/movie",
+                      state: {
+                        movie: movie
+                      }
+                    }}
+                  >
+                    <img
+                      className="poster"
+                      src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
+                      alt=""
+                      key={index}
+                    />
+                  </Link>
+
                   <div className="movieDetails">
                     <p className="movie-title">{movie.title}</p>
                   </div>

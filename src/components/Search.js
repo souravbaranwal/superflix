@@ -51,15 +51,13 @@ class Search extends Component {
               value={this.state.searchTerm}
             />
           </form>
-          {/* {this.state.movies && <Slider movieList={this.state.movies} />} */
-          console.log(this.state, "hi I am state in search component")}
-          {this.state.searched === false ? (
-            <Slider movieList={this.state.movies && this.state.movies} />
+          {console.log(this.state, "hi I am state in search component")}
+          {this.state.movies && <Slider movieList={this.state.movies} />}
+          {/* {this.state.searched === false ? (
+            <Slider movieList={this.state.movies} />
           ) : (
-            <Slider
-              movieList={this.state.moviesSearched && this.state.moviesSearched}
-            />
-          )}
+            <Slider movieList={this.state.moviesSearched} />
+          )} */}
         </div>
       </>
     );
