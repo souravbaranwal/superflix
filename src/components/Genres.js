@@ -33,7 +33,12 @@ class Genres extends Component {
           this.props.moviesGenreList.map((genre, index) => {
             return (
               <>
-                <Slider movieList={genre} />
+                <div>
+                  <h6>{this.state.genreIDs[index].name}</h6>
+                </div>
+                <div>
+                  <Slider movieList={genre} />
+                </div>
 
                 {/* <ul>
                   <h6>{this.state.genreIDs[index].name}</h6>

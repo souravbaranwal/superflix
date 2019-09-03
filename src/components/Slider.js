@@ -1,15 +1,11 @@
 import React, { Component } from "react";
-import leftArrow from "../media/forward.png";
-import rightArrow from "../media/back.png";
 
 class Slider extends Component {
   constructor(props) {
     super(props);
     this.state = {
       movies: this.props.movieList,
-      currentImageIndex: 0,
-      arrowNext: leftArrow,
-      arrowPrev: rightArrow
+      currentImageIndex: 0
     };
   }
 
@@ -42,7 +38,33 @@ class Slider extends Component {
     return (
       <>
         <div className="sliderParent">
-          <ul className="slider-content">
+          <div className="sliderChild arrow-container">
+            <li className="slider-item arrow-container">
+              <i class="fa fa-angle-left" onClick={this.prevSlide}></i>
+            </li>
+          </div>
+          <div className="sliderChild">
+            <ul className="slider-content">
+              {firstFiveVideo.map((image, index) => (
+                <li className="slider-item">
+                  <img
+                    className="poster"
+                    src={`https://image.tmdb.org/t/p/w500${image.poster_path}`}
+                    alt=""
+                    key={index}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="sliderChild arrow-container">
+            <li className="slider-item arrow-container">
+              <i class="fa fa-angle-right" onClick={this.nextSlide}></i>
+            </li>
+          </div>
+        </div>
+
+        {/* <ul className="slider-content">
             <li className="slider-item arrow-container">
               <img
                 className="arrow"
@@ -70,8 +92,7 @@ class Slider extends Component {
                 alt=""
               />
             </li>
-          </ul>
-        </div>
+          </ul> */}
       </>
     );
   }

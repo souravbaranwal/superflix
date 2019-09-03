@@ -38,152 +38,29 @@ header {
 // Slider Section
 // ================================
 
-// .sliderContainer {
-//   display: flex;
-//   padding: 0 55px;
-//   &:hover {
-//     .item {
-//       transform: translateX(-25%);
-//     }
-//   }
-// }
-
-// .item {
-//   background: green;
-//   flex: 0 0 19.7%;
-//   text-align: center;
-//   margin: 0 2px;
-//   height: 300px;
-//   transition: transform 300ms ease 100ms;
-
-//   &:hover + .item {
-//     transform: translateX(25%);
-//   }
-// }
-
-// .sliderImage {
-//   height: 300px;
-// }
-
-// .d-carousel,
-// .d-carousel * {
-//   -webkit-box-sizing: border-box;
-//   box-sizing: border-box;
-// }
-// .d-carousel {
-//   position: relative;
-//   overflow-y: hidden;
-// }
-// .d-carousel__outer {
-//   overflow-x: hidden;
-//   overflow-y: hidden;
-//   -webkit-overflow-scrolling: touch;
-//   position: relative;
-//   white-space: nowrap;
-//   margin-bottom: -1.5rem;
-// }
-// .d-carousel__outer::-webkit-scrollbar {
-//   display: none;
-// }
-// .d-carousel__inner {
-//   padding: 1rem 0;
-//   display: inline-block;
-// }
-// .d-carousel__ul {
-//   display: -webkit-box;
-//   display: -ms-flexbox;
-//   display: flex;
-//   margin: 0 0 1.5rem;
-//   padding: 0;
-//   height: 400px;
-// }
-
-// .d-carousel__item {
-//   display: block;
-//   padding: 0 0.5rem;
-//   transition: all ease-in 0.3s;
-//   &:hover {
-//     transform: scale(1.05);
-//     margin: 0 2rem;
-//   }
-// }
-// .d-carousel__next,
-// .d-carousel__prev {
-//   position: absolute;
-//   top: 50%;
-//   cursor: pointer;
-//   display: block;
-//   background: rgba(255, 255, 255, 0.5);
-//   border: 0;
-//   border-radius: 50%;
-//   display: -webkit-box;
-//   display: -ms-flexbox;
-//   display: flex;
-//   -webkit-box-align: center;
-//   -ms-flex-align: center;
-//   align-items: center;
-//   -webkit-box-pack: center;
-//   -ms-flex-pack: center;
-//   justify-content: center;
-//   width: 2.5rem;
-//   height: 2.5rem;
-//   z-index: 2;
-// }
-// .d-carousel__next svg,
-// .d-carousel__prev svg {
-//   width: 1.5rem;
-//   height: 1.5rem;
-// }
-// .d-carousel__next.disabled,
-// .d-carousel__prev.disabled {
-//   opacity: 0;
-//   pointer-events: none;
-// }
-// .d-carousel__next {
-//   right: 0.5rem;
-//   -webkit-transform: translateY(-50%);
-//   transform: translateY(-50%);
-// }
-// .d-carousel__prev {
-//   left: 0.5rem;
-//   -webkit-transform: translateY(-50%) rotate(-180deg);
-//   transform: translateY(-50%) rotate(-180deg);
-// }
-// .d-carousel.init .d-carousel__next,
-// .d-carousel.init .d-carousel__prev {
-//   -webkit-transition: opacity 0.5s ease-in-out;
-//   transition: opacity 0.5s ease-in-out;
-// }
-// @supports (color: #fff) {
-//   .d-carousel__outer {
-//     overflow-x: auto;
-//   }
-// }
-
-// .d-carousel__item {
-//   width: 200px;
-// }
-
 .sliderParent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  // margin: 40px 0;
+
   img {
-    height: 300px;
     width: 200px;
+    height: 300px;
   }
   ul {
     list-style: none;
   }
 
   ul:hover li {
-    -webkit-transform: translateX(-25%);
     transform: translateX(-25%);
   }
   ul:hover li:hover {
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
+    transform: scale(1.2);
     transition-duration: 0.1818181818s;
   }
   ul:hover li:hover ~ li {
-    -webkit-transform: translateX(25%);
     transform: translateX(25%);
   }
 
@@ -192,8 +69,7 @@ header {
     vertical-align: middle;
     display: inline-block;
     list-style: none;
-    width: 200px;
-    height: 300px;
+
     transition-duration: 0.3s;
     overflow: hidden;
     cursor: pointer;
@@ -204,17 +80,18 @@ header {
     display: block;
     margin-top: 34px;
     list-style: none;
-    white-space: nowrap;
-    transform: translateY(-50%) translateX(-100px);
+    // white-space: nowrap;
+    // transform: translateY(-50%) translateX(-100px);
     text-align: center;
   }
   .arrow-container {
-    // display: flex;
-    // justify-items: center;
-
-    .arrow {
-      width: 50px;
-      height: 60px;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    i {
+      font-size: 50px;
+      color: rgba(128, 128, 128, 0.24);
+      cursor: pointer;
     }
   }
 }
