@@ -8,7 +8,7 @@ class Search extends Component {
       movies: null,
       searched: false,
       searchTerm: "",
-      moviesSearched: []
+      moviesSearched: null
     };
   }
   componentDidMount() {
@@ -52,12 +52,12 @@ class Search extends Component {
             />
           </form>
           {console.log(this.state, "hi I am state in search component")}
-          {this.state.movies && <Slider movieList={this.state.movies} />}
-          {/* {this.state.searched === false ? (
-            <Slider movieList={this.state.movies} />
-          ) : (
-            <Slider movieList={this.state.moviesSearched} />
-          )} */}
+          {/* {this.state.movies && <Slider movieList={this.state.movies} />} */}
+          {this.state.searched
+            ? this.state.moviesSearched && (
+                <Slider movieList={this.state.moviesSearched} />
+              )
+            : this.state.movies && <Slider movieList={this.state.movies} />}
         </div>
       </>
     );

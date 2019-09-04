@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Genres from "./Genres";
+import Hero from "./Hero";
 
 class Home extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class Home extends Component {
   render() {
     return (
       <>
+        <Hero />
         <Genres />
       </>
     );
