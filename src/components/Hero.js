@@ -3,7 +3,11 @@ import React, { Component } from "react";
 class Hero extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      //   movieId: null,
+      videoKey: null,
+      isLoading: true
+    };
   }
 
   componentDidMount() {
@@ -11,14 +15,33 @@ class Hero extends Component {
       "https://api.themoviedb.org/3/movie/now_playing?api_key=aebe3910ab68767bd5047cf76f34c313&language=en-US&page=1"
     )
       .then(res => res.json())
-      .then(data => console.log(data));
+      .then(({ results }) =>
+        fetch(
+          `https://api.themoviedb.org/3/movie/${results[0].id}/videos?api_key=aebe3910ab68767bd5047cf76f34c313&language=en-US
+      `
+        )
+          .then(res => res.json())
+          .then(data =>
+            this.setState({
+              videoKey: data.results[0].key,
+              isLoading: true
+            })
+          )
+      );
   }
   render() {
-    return (
-      <>
-        <div className="header">Hi I am Header</div>
-      </>
-    );
+    if (this.state.videoKey) {
+      return (
+        <>
+          <div className="header">
+            Hi I am Header and I am working properly
+            {this.state.videoKey}
+          </div>
+        </>
+      );
+    } else {
+      return <>loading</>;
+    }
   }
 }
 
