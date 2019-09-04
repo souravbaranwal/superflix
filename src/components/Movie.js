@@ -34,13 +34,43 @@ class Movie extends Component {
     return (
       <>
         {this.state.movies && (
-          <div className="movieContainer">
+          <div className="moviePageContainer">
             <div className="movie-info">
-              <img
-                src={`https://image.tmdb.org/t/p/w500/${this.state.movie.poster_path}`}
-                alt=""
-              />
+              <div className="movie-info-child-left ">
+                <img
+                  src={`https://image.tmdb.org/t/p/w500/${this.state.movie.poster_path}`}
+                  alt=""
+                />
+              </div>
+              <div className="movie-info-child-right ">
+                <h6>{this.state.movie.title}</h6>
+                <p>
+                  <strong>Rating: </strong>
+                  {this.state.movie.vote_average}
+                </p>
+                <p>
+                  <strong>Release Date: </strong>
+                  {this.state.movie.release_date}
+                </p>
+                <p>
+                  <strong>Overview: </strong>
+                  {this.state.movie.overview}
+                </p>
+
+                <div className="buttons-movie">
+                  <button type="button " className="btn2 btn-primary2">
+                    Play
+                  </button>
+                  <button type="button " className="btn2 btn-primary2">
+                    + My List
+                  </button>
+                </div>
+              </div>
             </div>
+            <div className="title-movie-component">
+              <h6>Similar Movies</h6>
+            </div>
+
             <Slider movieList={this.state.movies} />
           </div>
         )}

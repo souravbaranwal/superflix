@@ -78,36 +78,6 @@ class Slider extends Component {
             </li>
           </div>
         </div>
-
-        {/* <ul className="slider-content">
-            <li className="slider-item arrow-container">
-              <img
-                className="arrow"
-                src={this.state.arrowPrev}
-                onClick={this.prevSlide}
-                alt=""
-              />
-            </li>
-
-            {firstFiveVideo.map((image, index) => (
-              <li className="slider-item">
-                <img
-                  className="poster"
-                  src={`https://image.tmdb.org/t/p/w500${image.poster_path}`}
-                  alt=""
-                  key={index}
-                />
-              </li>
-            ))}
-            <li className="slider-item arrow-container">
-              <img
-                className="arrow"
-                src={this.state.arrowNext}
-                onClick={this.nextSlide}
-                alt=""
-              />
-            </li>
-          </ul> */}
       </>
     );
   }

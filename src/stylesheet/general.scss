@@ -119,5 +119,55 @@ header {
 }
 
 // ================================
+// Movie Page
+// ================================
+.movie-info {
+  display: flex;
+  width: 90%;
+  min-height: 600px;
+  justify-content: center;
+  margin: 1rem auto 1rem;
+
+  .movie-info-child-left,
+  .movie-info-child-right {
+    padding: 10px;
+    flex: 50%;
+  }
+
+  .movie-info-child-left {
+    display: flex;
+    justify-content: flex-end;
+    img {
+      width: 400px;
+      height: 600px;
+    }
+  }
+
+  .movie-info-child-right {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    p {
+      font-size: 1.2 rem;
+      margin: 0.5rem 0 0 0;
+      strong {
+        font-weight: 600;
+      }
+    }
+  }
+}
+.moviePageContainer {
+  .title-movie-component {
+    h6 {
+      margin: 3rem 0 1rem 6rem;
+    }
+  }
+  .sliderParent {
+    margin-bottom: 6rem;
+  }
+}
+
+// ================================
 // Search Page
 // ================================
