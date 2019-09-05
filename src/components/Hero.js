@@ -33,9 +33,20 @@ class Hero extends Component {
     if (this.state.videoKey) {
       return (
         <>
-          <div className="header">
-            Hi I am Header and I am working properly
-            {this.state.videoKey}
+          <div className="hero">
+            {/* Hi I am Header and I am working properly
+            {this.state.videoKey} */}
+            <div className="iframe-container">
+              <iframe
+                id="bg"
+                src={`https://www.youtube.com/embed/${this.state.videoKey}?controls=0&amp;autoplay=0&amp`}
+                frameborder="0"
+                autoplay="1"
+              ></iframe>
+            </div>
+            <div className="iframe-content">
+              <h2>This will be placed over the video</h2>
+            </div>
           </div>
         </>
       );
