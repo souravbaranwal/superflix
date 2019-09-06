@@ -38,18 +38,18 @@ header {
 // ================================
 .hero {
   overflow: hidden;
-  .iframe-container {
+  .img-container {
     display: flex;
     align-content: center;
 
-    iframe {
+    img {
       width: 100%;
-      height: 800px;
+      height: 600px;
       position: relative;
     }
   }
 
-  .iframe-content {
+  .img-content {
     position: absolute;
     top: 50rem;
     padding: 30px;
