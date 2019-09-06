@@ -24,14 +24,23 @@ class Hero extends Component {
       return (
         <>
           <div className="hero">
-            <div className="img-container">
-              <img
-                src={`https://image.tmdb.org/t/p/w500/${this.state.movie.backdrop_path}`}
-                alt=""
-              />
-            </div>
-            <div className="img-content">
-              <h2>This will be placed over the video</h2>
+            <div
+              className="img-container"
+              style={{
+                backgroundImage:
+                  "url(" +
+                  `https://image.tmdb.org/t/p/original/${this.state.movie.backdrop_path}` +
+                  ")",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat"
+              }}
+            >
+              <div className="img-content">
+                <h2>{this.state.movie.original_title}</h2>
+                <p>{this.state.movie.release_date}</p>
+                <p className="overview">{this.state.movie.overview}</p>
+              </div>
             </div>
           </div>
         </>

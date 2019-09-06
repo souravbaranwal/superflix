@@ -9,7 +9,7 @@ class Footer extends Component {
     return (
       <>
         <footer>
-          <p>SuperFlix, Copyright &copy; 2019</p>
+          <p>SuperFlix, Made by Sourav</p>
         </footer>
       </>
     );
