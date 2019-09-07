@@ -253,7 +253,13 @@ header {
       border: 0;
       outline: 0;
       padding: 15px 18px;
+      margin: 30px auto 100px;
     }
+  }
+  .searchSlider {
+    height: 450px;
+    display: flex;
+    justify-content: center;
   }
 }
 

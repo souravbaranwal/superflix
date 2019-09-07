@@ -57,12 +57,13 @@ class Search extends Component {
               </button>
             </form>
           </div>
-
-          {this.state.searched
-            ? this.state.moviesSearched && (
-                <Slider movieList={this.state.moviesSearched} />
-              )
-            : this.state.movies && <Slider movieList={this.state.movies} />}
+          <div className="searchSlider">
+            {this.state.searched
+              ? this.state.moviesSearched && (
+                  <Slider movieList={this.state.moviesSearched} />
+                )
+              : this.state.movies && <Slider movieList={this.state.movies} />}
+          </div>
         </div>
       </>
     );
