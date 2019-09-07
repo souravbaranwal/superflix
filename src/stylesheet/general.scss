@@ -224,15 +224,11 @@ footer {
 }
 
 @media all and (max-width: 768px) {
-  .slider-item {
-    height: 40px;
-  }
   .poster {
-    opacity: 1;
-    display: block;
     width: 65.83px !important;
     height: 35px !important;
-    transition: 0.5s ease;
-    backface-visibility: hidden;
+  }
+  p {
+    font-size: 0.5rem;
   }
 }

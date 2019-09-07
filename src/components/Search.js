@@ -41,7 +41,7 @@ class Search extends Component {
   render() {
     return (
       <>
-        <div className="searchContainer">
+        <div className="container">
           <form onSubmit={this.handleSubmit}>
             <input
               type="text"
@@ -51,8 +51,6 @@ class Search extends Component {
               value={this.state.searchTerm}
             />
           </form>
-          {console.log(this.state, "hi I am state in search component")}
-          {/* {this.state.movies && <Slider movieList={this.state.movies} />} */}
           {this.state.searched
             ? this.state.moviesSearched && (
                 <Slider movieList={this.state.moviesSearched} />
