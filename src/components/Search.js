@@ -41,16 +41,23 @@ class Search extends Component {
   render() {
     return (
       <>
-        <div className="container">
-          <form onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              name="searchTerm"
-              placeholder="Search with movie name.."
-              onChange={this.handleChange}
-              value={this.state.searchTerm}
-            />
-          </form>
+        <div className="searchContainer text-center">
+          <div className="container__item container">
+            <form className="form" onSubmit={this.handleSubmit}>
+              <input
+                type="text"
+                name="searchTerm"
+                className="form__field"
+                placeholder="Search for movie"
+                onChange={this.handleChange}
+                value={this.state.searchTerm}
+              />
+              <button type="submit" className="btn btn--primary btn--inside ">
+                Submit
+              </button>
+            </form>
+          </div>
+
           {this.state.searched
             ? this.state.moviesSearched && (
                 <Slider movieList={this.state.moviesSearched} />
