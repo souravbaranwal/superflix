@@ -51,7 +51,7 @@ class Genres extends Component {
           <>
             <div>
               <h6 className="genre-heading">
-                <Skeleton />
+                <Skeleton width={80} duration={3} />
               </h6>
             </div>
             <div>
@@ -59,7 +59,7 @@ class Genres extends Component {
             </div>
             <div>
               <h6 className="genre-heading">
-                <Skeleton />
+                <Skeleton width={92} />
               </h6>
             </div>
             <div>
@@ -67,7 +67,7 @@ class Genres extends Component {
             </div>
             <div>
               <h6 className="genre-heading">
-                <Skeleton />
+                <Skeleton width={80} />
               </h6>
             </div>
             <div>
@@ -75,7 +75,7 @@ class Genres extends Component {
             </div>
             <div>
               <h6 className="genre-heading">
-                <Skeleton />
+                <Skeleton width={90} />
               </h6>
             </div>
             <div>

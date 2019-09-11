@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Slider from "./Slider";
+import SliderPlaceholder from "./SliderPlaceholder";
 
 class Search extends Component {
   constructor(props) {
@@ -77,7 +78,9 @@ class Search extends Component {
               <Slider movieList={this.state.movies} />
             </div>
           ) : (
-            " "
+            <div className="searchSlider">
+              <SliderPlaceholder />
+            </div>
           )}
         </div>
       </>
