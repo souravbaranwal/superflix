@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Skeleton from "react-loading-skeleton";
 
 class Hero extends Component {
   constructor(props) {
@@ -46,7 +47,25 @@ class Hero extends Component {
         </>
       );
     } else {
-      return <>loading</>;
+      return (
+        <>
+          <div className="hero">
+            <div className="img-container" style={{ backgroundColor: "grey" }}>
+              <div className="img-content">
+                <h2>
+                  <Skeleton duration={2} />
+                </h2>
+                <p>
+                  <Skeleton duration={2} />
+                </p>
+                <p className="overview">
+                  <Skeleton duration={2} count={2} />
+                </p>
+              </div>
+            </div>
+          </div>
+        </>
+      );
     }
   }
 }
