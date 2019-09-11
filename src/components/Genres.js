@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Skeleton from "react-loading-skeleton";
+
 import Slider from "./Slider";
+import SliderPlaceholder from "./SliderPlaceholder";
 
 class Genres extends Component {
   constructor(props) {
@@ -29,7 +32,7 @@ class Genres extends Component {
   render() {
     return (
       <>
-        {this.props.moviesGenreList &&
+        {this.props.moviesGenreList ? (
           this.props.moviesGenreList.map((genre, index) => {
             return (
               <>
@@ -43,8 +46,43 @@ class Genres extends Component {
                 </div>
               </>
             );
-          })}
-        <ul></ul>
+          })
+        ) : (
+          <>
+            <div>
+              <h6 className="genre-heading">
+                <Skeleton />
+              </h6>
+            </div>
+            <div>
+              <SliderPlaceholder />
+            </div>
+            <div>
+              <h6 className="genre-heading">
+                <Skeleton />
+              </h6>
+            </div>
+            <div>
+              <SliderPlaceholder />
+            </div>
+            <div>
+              <h6 className="genre-heading">
+                <Skeleton />
+              </h6>
+            </div>
+            <div>
+              <SliderPlaceholder />
+            </div>
+            <div>
+              <h6 className="genre-heading">
+                <Skeleton />
+              </h6>
+            </div>
+            <div>
+              <SliderPlaceholder />
+            </div>
+          </>
+        )}
       </>
     );
   }

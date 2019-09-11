@@ -25,23 +25,6 @@ class Header extends Component {
               </li>
             </ul>
           </nav>
-
-          {/* <h1 className="logo">SuperFlix</h1>
-          <ul className="nav">
-            <li className="navlink">
-              <NavLink exact activeClassName="active " className="btn" to="/">
-                Home
-              </NavLink>
-            </li>
-            <li className="navlink">
-              <NavLink activeClassName="active " className="btn" to="/search">
-                Search
-              </NavLink>
-            </li>
-          </ul>
-          <div className="burger">
-            <i className="fas fa-bars"></i>
-          </div> */}
         </header>
       </>
     );

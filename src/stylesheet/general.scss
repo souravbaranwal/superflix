@@ -156,6 +156,17 @@ header {
 }
 
 // ================================
+// Slider Placeholder
+// ================================
+.posterPlaceholder {
+  display: block;
+  width: 250px;
+  height: 150px;
+  border-radius: 6px;
+  background: red;
+}
+
+// ================================
 // Movie Page
 // ================================
 .movie-info {
