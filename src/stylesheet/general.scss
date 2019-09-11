@@ -240,6 +240,9 @@ header {
         background: darken(rgb(0, 0, 0), 4%);
       }
     }
+    .title {
+      margin-bottom: 20px;
+    }
   }
 
   //** form
@@ -247,7 +250,7 @@ header {
     &__field {
       width: 360px;
       background: #0f0f0fce;
-      color: red;
+      color: rgb(138, 138, 138);
       font: inherit;
       box-shadow: 0 6px 10px 0 rgba(117, 117, 117, 0.1);
       border: 0;

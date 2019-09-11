@@ -57,13 +57,28 @@ class Search extends Component {
               </button>
             </form>
           </div>
-          <div className="searchSlider">
-            {this.state.searched
-              ? this.state.moviesSearched && (
-                  <Slider movieList={this.state.moviesSearched} />
-                )
-              : this.state.movies && <Slider movieList={this.state.movies} />}
-          </div>
+
+          {this.state.searched && this.state.moviesSearched.length > 0 ? (
+            <div className="searchSlider">
+              <Slider movieList={this.state.moviesSearched} />
+            </div>
+          ) : this.state.moviesSearched &&
+            this.state.moviesSearched.length === 0 ? (
+            <>
+              <h6 className="title">Nothing Found</h6>
+              <p>But you may also like</p>
+              {/* using popular movie api as latest movie api returns a single movie */}
+              <div className="searchSlider">
+                <Slider movieList={this.state.movies} />
+              </div>
+            </>
+          ) : this.state.movies ? (
+            <div className="searchSlider">
+              <Slider movieList={this.state.movies} />
+            </div>
+          ) : (
+            " "
+          )}
         </div>
       </>
     );
