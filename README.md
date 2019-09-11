@@ -9,4 +9,3 @@ The App can be accessed at url https://superflix.sourav.co .
 ![homepage 2](/superflix-home-page-2.png)
 ![movie page](/superflix-movie-page.png)
 ![search page](/superflix-search-page.png)
-![homepage 1](/superflix-home-page-1.png)
