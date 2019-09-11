@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+import Skeleton from "react-loading-skeleton";
+
 import Slider from "./Slider";
+import SliderPlaceholder from "./SliderPlaceholder";
 
 class Movie extends Component {
   constructor(props) {
@@ -21,19 +24,9 @@ class Movie extends Component {
       .then(({ results }) => this.setState({ movies: results }));
   }
   render() {
-    // if (this.state.movies) {
-    //   let {
-    //     title,
-    //     original_language,
-    //     overview,
-    //     poster_path,
-    //     vote_average
-    //   } = this.state.movie;
-    // }
-
     return (
       <>
-        {this.state.movies && (
+        {this.state.movies ? (
           <div className="moviePageContainer">
             <div className="movie-info">
               <div className="movie-info-child-left ">
@@ -72,6 +65,48 @@ class Movie extends Component {
             </div>
 
             <Slider movieList={this.state.movies} />
+          </div>
+        ) : (
+          <div className="moviePageContainer">
+            <div className="movie-info">
+              <div className="movie-info-child-left ">
+                <div className="imagePlaceholder"></div>
+                <Skeleton height={600} width={400} />
+              </div>
+              <div className="movie-info-child-right ">
+                <h6>
+                  <Skeleton />
+                </h6>
+                <p>
+                  <strong>Rating: </strong>
+                  <Skeleton />
+                </p>
+                <p>
+                  <strong>Release Date: </strong>
+                  <Skeleton />
+                </p>
+                <p>
+                  <strong>Overview: </strong>
+                  <Skeleton />
+                </p>
+
+                <div className="buttons-movie">
+                  <button type="button " className="btn2 btn-primary2">
+                    Play
+                  </button>
+                  <button type="button " className="btn2 btn-primary2">
+                    + My List
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="title-movie-component">
+              <h6>
+                <Skeleton />
+              </h6>
+            </div>
+
+            <SliderPlaceholder />
           </div>
         )}
       </>
