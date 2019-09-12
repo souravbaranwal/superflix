@@ -51,7 +51,7 @@ class Slider extends Component {
                   {/* passing movie object through Link */}
                   <Link
                     to={{
-                      pathname: "/movie",
+                      pathname: `/movie`,
                       state: {
                         movie: movie
                       }

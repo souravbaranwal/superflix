@@ -4,6 +4,7 @@ import Skeleton from "react-loading-skeleton";
 
 import Slider from "./Slider";
 import SliderPlaceholder from "./SliderPlaceholder";
+import { addMoviesGenreList } from "../actions";
 
 class Genres extends Component {
   constructor(props) {
@@ -18,16 +19,18 @@ class Genres extends Component {
     };
   }
   componentDidMount() {
-    const allPromises = this.state.genreIDs.map(singleGenre => {
-      return fetch(
-        `https://api.themoviedb.org/3/discover/movie?api_key=aebe3910ab68767bd5047cf76f34c313&with_genres=${singleGenre.id}&sort_by=popularity.desc`
-      )
-        .then(res => res.json())
-        .then(({ results }) => results);
-    });
-    Promise.all(allPromises).then(res =>
-      this.props.dispatch({ type: "ADD_GENRES", payload: res })
-    );
+    if (!this.props.moviesGenreList) {
+      const allPromises = this.state.genreIDs.map(singleGenre => {
+        return fetch(
+          `https://api.themoviedb.org/3/discover/movie?api_key=aebe3910ab68767bd5047cf76f34c313&with_genres=${singleGenre.id}&sort_by=popularity.desc`
+        )
+          .then(res => res.json())
+          .then(({ results }) => results);
+      });
+      Promise.all(allPromises).then(res =>
+        this.props.dispatch(addMoviesGenreList(res))
+      );
+    }
   }
   render() {
     return (

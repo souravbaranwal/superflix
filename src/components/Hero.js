@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Skeleton from "react-loading-skeleton";
+import { connect } from "react-redux";
+import { addHeroMovie } from "../actions";
 
 class Hero extends Component {
   constructor(props) {
@@ -10,18 +12,16 @@ class Hero extends Component {
   }
 
   componentDidMount() {
-    fetch(
-      "https://api.themoviedb.org/3/movie/now_playing?api_key=aebe3910ab68767bd5047cf76f34c313&language=en-US&page=1"
-    )
-      .then(res => res.json())
-      .then(({ results }) =>
-        this.setState({
-          movie: results[1]
-        })
-      );
+    if (!this.props.heroMovie) {
+      fetch(
+        "https://api.themoviedb.org/3/movie/now_playing?api_key=aebe3910ab68767bd5047cf76f34c313&language=en-US&page=1"
+      )
+        .then(res => res.json())
+        .then(({ results }) => this.props.dispatch(addHeroMovie(results[1])));
+    }
   }
   render() {
-    if (this.state.movie) {
+    if (this.props.heroMovie) {
       return (
         <>
           <div className="hero">
@@ -30,7 +30,7 @@ class Hero extends Component {
               style={{
                 backgroundImage:
                   "url(" +
-                  `https://image.tmdb.org/t/p/original/${this.state.movie.backdrop_path}` +
+                  `https://image.tmdb.org/t/p/original/${this.props.heroMovie.backdrop_path}` +
                   ")",
                 backgroundPosition: "center",
                 backgroundSize: "cover",
@@ -38,9 +38,9 @@ class Hero extends Component {
               }}
             >
               <div className="img-content">
-                <h2>{this.state.movie.original_title}</h2>
-                <p>{this.state.movie.release_date}</p>
-                <p className="overview">{this.state.movie.overview}</p>
+                <h2>{this.props.heroMovie.original_title}</h2>
+                <p>{this.props.heroMovie.release_date}</p>
+                <p className="overview">{this.props.heroMovie.overview}</p>
               </div>
             </div>
           </div>
@@ -70,4 +70,10 @@ class Hero extends Component {
   }
 }
 
-export default Hero;
+function mapState({ heroMovie }) {
+  return {
+    ...heroMovie
+  };
+}
+
+export default connect(mapState)(Hero);
