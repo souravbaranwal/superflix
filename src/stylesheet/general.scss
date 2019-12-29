@@ -368,6 +368,31 @@ footer {
         height: 60px !important;
         width: 100% !important;
     }
+
+    // movie page
+    .movie-info {
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+
+        .movie-info-child-left {
+            padding: 0;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .title-movie-component {
+        h6 {
+            margin: 0rem 0 1rem 1rem !important;
+        }
+    }
+
+    footer {
+        padding-bottom: 20px;
+    }
 }
 
 @media all and (max-width: 768px) {
