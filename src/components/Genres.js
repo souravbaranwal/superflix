@@ -2,9 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Skeleton from "react-loading-skeleton";
 
+
+
 import Slider from "./Slider";
 import SliderPlaceholder from "./SliderPlaceholder";
 import { addMoviesGenreList } from "../actions";
+
 
 class Genres extends Component {
   constructor(props) {
@@ -44,6 +47,7 @@ class Genres extends Component {
                     {this.state.genreIDs[index].name}
                   </h6>
                 </div>
+                
                 <div>
                   <Slider movieList={genre} />
                 </div>

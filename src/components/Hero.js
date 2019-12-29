@@ -53,13 +53,13 @@ class Hero extends Component {
             <div className="img-container" style={{ backgroundColor: "grey" }}>
               <div className="img-content">
                 <h2>
-                  <Skeleton duration={0.4} />
+                  <Skeleton duration={1} />
                 </h2>
                 <p>
-                  <Skeleton duration={0.4} />
+                  <Skeleton duration={1} />
                 </p>
                 <p className="overview">
-                  <Skeleton duration={0.4} count={2} />
+                  <Skeleton duration={1} count={2} />
                 </p>
               </div>
             </div>

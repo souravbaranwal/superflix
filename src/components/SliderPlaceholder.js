@@ -14,27 +14,27 @@ const SliderPlaceholder = () => {
           <ul className="slider-content">
             <li className="slider-item">
               <div className="posterPlaceholder">
-                <Skeleton height={150} />
+                <Skeleton height={150} duration={1} />
               </div>
             </li>
             <li className="slider-item">
               <div className="posterPlaceholder">
-                <Skeleton height={150} />
+                <Skeleton height={150} duration={1} />
               </div>
             </li>
             <li className="slider-item">
               <div className="posterPlaceholder">
-                <Skeleton height={150} />
+                <Skeleton height={150} duration={1} />
               </div>
             </li>
             <li className="slider-item">
               <div className="posterPlaceholder">
-                <Skeleton height={150} />
+                <Skeleton height={150} duration={1} />
               </div>
             </li>
             <li className="slider-item">
               <div className="posterPlaceholder">
-                <Skeleton height={150} />
+                <Skeleton height={150} duration={1} />
               </div>
             </li>
           </ul>

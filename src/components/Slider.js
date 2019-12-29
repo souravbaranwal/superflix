@@ -44,7 +44,7 @@ class Slider extends Component {
               <i class="fa fa-angle-left" onClick={this.prevSlide}></i>
             </li>
           </div>
-          <div className="sliderChild">
+          <div className="sliderChild slider-content-container">
             <ul className="slider-content">
               {firstFiveVideo.map((movie, index) => (
                 <li className="slider-item">
@@ -66,7 +66,16 @@ class Slider extends Component {
                   </Link>
 
                   <div className="movieDetails">
-                    <p className="movie-title">{movie.title}</p>
+                    <Link
+                      to={{
+                        pathname: `/movie`,
+                        state: {
+                          movie: movie
+                        }
+                      }}
+                    >
+                      <p className="movie-title">{movie.title}</p>
+                    </Link>
                   </div>
                 </li>
               ))}
