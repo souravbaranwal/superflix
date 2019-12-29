@@ -319,13 +319,17 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
+    header {
+        padding-left: 18px !important;
+    }
+
     .hero {
         .img-container {
             height: 300px;
         }
 
         .img-content {
-            padding: 40px;
+            padding: 18px;
         }
     }
 
@@ -388,6 +392,10 @@ footer {
         h6 {
             margin: 0rem 0 1rem 1rem !important;
         }
+    }
+
+    .genre-heading {
+        margin: 5px 5px 5px 18px;
     }
 
     footer {
