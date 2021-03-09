@@ -1,7 +1,7 @@
 # Superflix
 
 A netflix clone made using api provided by MovieDB.
-The App can be accessed at url https://superflix.sourav.co .
+The App can be accessed at url https://superflix.souravkumar.tech .
 
 # Screenshots
 
