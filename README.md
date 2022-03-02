@@ -1,7 +1,7 @@
 # Superflix
 
 A netflix clone made using api provided by MovieDB.
-The App can be accessed at url https://superflix.souravkumar.tech .
+The App can be accessed at url https://inspiring-pike-076671.netlify.app/.
 
 # Screenshots
 
